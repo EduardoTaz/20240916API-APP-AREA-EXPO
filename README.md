@@ -17,7 +17,7 @@
 # Instalação do projeto Backend (Node.js)
   **Clonar o repositório**
   git clone https://github.com/EduardoTaz/20240916API-WEB-AREA-NODEJS.git
-  cd 20240916API-WEB-AREA-NODEJS-2.0.1
+  cd 20240916API-WEB-AREA-NODEJS-1.0.0
 
   **Instalar as dependências**
   * npm install
@@ -28,7 +28,7 @@
 # Instalação do projeto Frontend (React Native com Expo) 
   **Clonar o repositório**
   * git clone https://github.com/EduardoTaz/20240916API-APP-AREA-EXPO.git
-  * cd 20240916API-APP-AREA-EXPO-2.0.1
+  * cd 20240916API-APP-AREA-EXPO-1.0.0
 
   **Instalar as dependências**
   * npm install expo
