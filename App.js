@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function App() {
-  const [direita, setDireita] = useState('');
-  const [esquerda, setEsquerda] = useState('');
-  const [cima, setCima] = useState('');
-  const [baixo, setBaixo] = useState('');
+  const [lado1, setLado1] = useState('');
+  const [lado2, setLado2] = useState('');
+  const [lado3, setLado3] = useState('');
+  const [lado4, setLado4] = useState('');
   const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
 
@@ -13,10 +13,11 @@ export default function App() {
     try {
       setError(null); // Reset error
       const response = await fetch( // fetch = se eu terminar isso pode continuar o codigo
-        `http://172.16.7.1:9090/area?direita=${direita}&esquerda=${esquerda}&cima=${cima}&baixo=${baixo}`
+        `http://192.168.0.22:9090/area?lado1=${lado1}&lado2=${lado2}&lado3=${lado3}&lado4=${lado4}` // endereco da api
       );
       const data = await response.json();
 
+      //tratametno de erro 
       if (response.ok) {
         setResult(data.result);
       } else {
@@ -36,30 +37,30 @@ export default function App() {
       <TextInput // cria um input
         style={styles.input} // define a classe para estilização
         keyboardType="numeric" // define o tipo de teclado para numerico
-        placeholder="Lado direito" // texto a ser exibido no input
-        value={direita} // valor 
-        onChangeText={setDireita}
+        placeholder="Lado 1" // texto a ser exibido no input
+        value={lado1} // valor 
+        onChangeText={setLado1}
       />
       <TextInput
         style={styles.input}
         keyboardType="numeric"
-        placeholder="Lado esquerdo"
-        value={esquerda}
-        onChangeText={setEsquerda}
+        placeholder="Lado 2"
+        value={lado2}
+        onChangeText={setLado2}
       />
             <TextInput
         style={styles.input}
         keyboardType="numeric"
-        placeholder="Cima"
-        value={cima}
-        onChangeText={setCima}
+        placeholder="Lado 3"
+        value={lado3}
+        onChangeText={setLado3}
       />
             <TextInput
         style={styles.input}
         keyboardType="numeric"
-        placeholder="Base"
-        value={baixo}
-        onChangeText={setBaixo}
+        placeholder="Lado 4"
+        value={lado4}
+        onChangeText={setLado4}
       />
 
       <Button title="Calcular" onPress={handleCalculate} />
